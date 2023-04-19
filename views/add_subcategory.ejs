@@ -1,0 +1,46 @@
+<%- include('header') %>
+
+
+  <!-- Content -->
+
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms Basic</h4>
+
+    <div class="row">
+      <div class="col-md-6">
+        <form class="card mb-4" method="post" action="/subcategoryData">
+          <h5 class="card-header">Sub category</h5>
+          <div class="card-body" style="padding-bottom: 5px;">
+            <label for="defaultFormControlInput" class="form-label">Category</label>
+            <select name="category" class="form-control">
+              <option>---select category---</option>
+              <%  allcategory.map((val)=>{ %>
+                  <option value="<%= val.id %>"><%= val.category_name %></option>
+              <% }) %>
+              
+          </select>
+          </div>
+          <div class="card-body">
+            <div>
+              <label for="defaultFormControlInput" class="form-label">Subcategory</label>
+              <input
+                type="text"
+                name="subcategory"
+                class="form-control"
+                id="defaultFormControlInput"
+                placeholder="Category Name Here"
+                aria-describedby="defaultFormControlHelp"
+              />
+              <div class="mb-3" style="padding: 10px 0px 10px 0px;">
+                <button class="btn btn-primary d-grid w-20" type="submit">submit</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+  
+
+  <!-- / Content -->
+
+
+<%- include('footer') %>

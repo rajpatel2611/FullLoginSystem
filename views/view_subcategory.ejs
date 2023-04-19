@@ -1,0 +1,41 @@
+<%- include('header') %>
+
+<div class="content-wrapper">
+    <!-- Content -->
+
+    <div class="container-xxl flex-grow-1 container-p-y">
+      <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> View_category</h4>
+
+      <!-- Basic Bootstrap Table -->
+      <div class="card">
+        <h5 class="card-header">Subcategory</h5>
+        <div class="table-responsive text-nowrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Sr.no</th>
+                <th>Category</th>
+                <th>Category</th>
+                <th>Action</th>
+                <!-- <th>Actions</th> -->
+              </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                <% 
+                    let cnt = 0; alldata.map((val) => {
+                        cnt++;
+                %>
+                        <tr>
+                            <td><%= cnt %></td>
+                            <td><%= val.category_name.category_name %></td>
+                            <td><%= val.subcategory %></td>
+                        </tr>
+                <%}) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+   
+</div>
+
+<%- include('footer') %>
